@@ -70,7 +70,6 @@ const copyPublicFiles = [
 
 const copyJspmFiles = [
   './config/firebase.json',
-  './jspm_packages/**/*',
 ]
 
 gulp.task('copy:public', ['clean'], () => {

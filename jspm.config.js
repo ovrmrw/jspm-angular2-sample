@@ -22,29 +22,36 @@ SystemJS.config({
   },
   devConfig: {
     "map": {
-      "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
-      "ts": "github:frankwallis/plugin-typescript@5.0.1",
+      // "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
+      // "ts": "github:frankwallis/plugin-typescript@5.0.1",
       "text": "github:systemjs/plugin-text@0.0.8"
     },
     "packages": {
-      "github:frankwallis/plugin-typescript@5.0.1": {
-        "map": {
-          "typescript": "npm:typescript@2.0.0"
-        }
-      }
+      // "github:frankwallis/plugin-typescript@5.0.1": {
+      //   "map": {
+      //     "typescript": "npm:typescript@2.0.0"
+      //   }
+      // }
     }
   },
-  transpiler: "plugin-babel",
+  // transpiler: "plugin-babel",
+  transpiler: false,
+  // packages: {
+  //   "app": {
+  //     "format": "cjs",
+  //     "main": "boot.ts",
+  //     "defaultExtension": "ts",
+  //     "meta": {
+  //       "*.ts": {
+  //         "loader": "ts"
+  //       }
+  //     }
+  //   }
+  // }
   packages: {
-    "app": {
-      "format": "cjs",
-      "main": "boot.ts",
-      "defaultExtension": "ts",
-      "meta": {
-        "*.ts": {
-          "loader": "ts"
-        }
-      }
+    'app': {
+      defaultExtension: 'js',
+      main: 'boot.js'
     }
   }
 });
@@ -53,7 +60,7 @@ SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
-    "github:*/*.json"
+    "github:*/*.json",
   ],
   map: {
     "@angular/common": "npm:@angular/common@2.0.0-rc.4",

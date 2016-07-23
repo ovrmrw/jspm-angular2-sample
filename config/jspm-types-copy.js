@@ -24,6 +24,7 @@ lodash.forEach(SystemJS.map, (value, key) => {
     const dirPath = value.replace(':', '/');
     console.log(dirPath); // npm/@angular/core@2.0.0-rc.4
 
-    fs.copySync(root + '/jspm_packages/' + dirPath, root + '/node_modules/@types/' + key, { filter: /\.ts/ });
+    fs.copySync(root + '/jspm_packages/' + dirPath, root + '/node_modules/@types/' + key, { filter: /\.ts$/ });
+    fs.copySync(root + '/jspm_packages/' + dirPath, root + '/node_modules/@types/' + key, { filter: /\.json$/ });
   }
 });
